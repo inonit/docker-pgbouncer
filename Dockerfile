@@ -4,8 +4,8 @@ ENV             VERSION 1.7.2
 
 
 RUN             apt-get update && apt-get upgrade -y
-RUN             apt-get install -yq \
-                    automake autoconf build-essential libevent-dev libssl-dev libc-ares-dev
+RUN             apt-get install -yq automake autoconf build-essential libevent-dev libssl-dev libc-ares-dev
+RUN             apt-get purge -y --auto-remove
 
 ADD             https://pgbouncer.github.io/downloads/files/1.7.2/pgbouncer-1.7.2.tar.gz /usr/local/src
 RUN             tar -zxvf /usr/local/src/pgbouncer-1.7.2.tar.gz -C /usr/local/src
