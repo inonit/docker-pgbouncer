@@ -1,4 +1,4 @@
-FROM            buildpack-deps:jessie-curl
+FROM            buildpack-deps:bionic-curl
 MAINTAINER      Inonit AS <support@inonit.no>
 
 ENV             PGBOUNCER_VERSION 1.13.0
@@ -12,7 +12,7 @@ RUN             useradd -rm -d /var/run/pgbouncer -s /usr/sbin/nologin -g pgboun
 
 # Install build dependencies
 RUN             apt-get update && apt-get upgrade -y
-RUN             apt-get install -y --no-install-recommends build-essential libevent-dev libssl-dev libc-ares-dev
+RUN             apt-get install -y --no-install-recommends build-essential libevent-dev libssl-dev libc-ares-dev pkg-config
 RUN             apt-get purge -y --auto-remove
 RUN             rm -rf /var/lib/apt/lists/*
 
