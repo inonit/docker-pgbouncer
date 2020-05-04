@@ -1,9 +1,11 @@
 PgBouncer is a lightweight connection pooler for PostgreSQL.
 
-**Current version 1.8.1**
 
-See the [PgBouncer website](https://pgbouncer.github.io/) for more information.
+**Current version 1.13.0**
+
+See the [PgBouncer website](http://www.pgbouncer.org) for more information.
 
 ```
-$ docker run -v <config_dir>:/etc/pgbouncer inonit/pgbouncer
+$ docker build . -t pgbouncer
+$ docker run -v <config_dir>:/etc/pgbouncer -p6432:6432 pgbouncer
 ```
